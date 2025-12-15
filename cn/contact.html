@@ -11,7 +11,10 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">知津<span>者</span></a>
+                <a href="index.html" class="logo">
+                    <img src="../circle_community_icon_32x32.svg" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+                    知津<span>者</span>
+                </a>
                 <div class="nav-links">
                     <a href="index.html">首页</a>
                     <a href="about.html">关于我们</a>
@@ -36,33 +39,47 @@
 
     <section class="section">
         <div class="container">
-            <div class="grid-2" style="align-items: start;">
+            <div class="grid-2" style="align-items: stretch; gap: 4rem;">
                 <!-- 联系信息 -->
-                <div>
-                    <h2 style="margin-bottom: 1.5rem;">联系我们</h2>
-                    <p class="text-muted" style="font-size: 1.1rem; margin-bottom: 2rem;">
-                        对我们的导师计划感兴趣？对新西兰学术体系有疑问？填写表格或直接给我们发邮件。
-                    </p>
+                <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                    <div>
+                        <h2 style="margin-bottom: 1.5rem; font-size: 2.2rem; color: var(--primary-dark);">联系我们</h2>
+                        <p class="text-muted" style="font-size: 1.1rem; margin-bottom: 2.5rem; line-height: 1.6;">
+                            对我们的导师计划感兴趣？对新西兰学术体系有疑问？请填写表格或直接通过邮件联系我们。
+                        </p>
+                    </div>
                     
-                    <div style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid #e2e8f0;">
-                        <h4 style="margin-bottom: 1rem;">联系详情</h4>
-                        <div style="margin-bottom: 1rem;">
-                            <strong>邮箱：</strong><br>
-                            <a href="mailto:info@researchpathway.co.nz" style="color: var(--accent-color); text-decoration: none;">info@researchpathway.co.nz</a>
+                    <div style="background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid rgba(37, 99, 235, 0.1); height: fit-content;">
+                        <h4 style="margin-bottom: 2rem; font-size: 1.3rem; color: var(--primary-dark); display: flex; align-items: center; gap: 0.8rem;">
+                            <span style="background: var(--primary-color); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem;">📧</span>
+                            联系详情
+                        </h4>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <div style="font-weight: 600; color: var(--primary-dark); margin-bottom: 0.5rem; font-size: 1rem;">邮箱</div>
+                            <a href="mailto:info@researchpathway.co.nz" style="color: var(--accent-color); text-decoration: none; font-size: 1rem; font-weight: 500;">
+                                info@researchpathway.co.nz
+                            </a>
                         </div>
-                        <div style="margin-bottom: 1rem;">
-                            <strong>地点：</strong><br>
-                            <span class="text-muted">新西兰基督城</span>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <div style="font-weight: 600; color: var(--primary-dark); margin-bottom: 0.5rem; font-size: 1rem;">地点</div>
+                            <span style="color: var(--text-main); font-size: 1rem;">新西兰基督城</span>
                         </div>
+                        
                         <div>
-                            <strong>办公时间：</strong><br>
-                            <span class="text-muted">周一至周五，上午9点 - 下午5点 (新西兰时间)</span>
+                            <div style="font-weight: 600; color: var(--primary-dark); margin-bottom: 0.5rem; font-size: 1rem;">办公时间</div>
+                            <span style="color: var(--text-main); font-size: 1rem;">周一至周五，上午9点 - 下午5点 (新西兰时间)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 联系表单 -->
-                <div class="card">
+                <div style="background: white; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); border: 1px solid #e2e8f0; position: relative; overflow: hidden; height: fit-content;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--accent-color));"></div>
+                    
+                    <h3 style="margin-bottom: 2rem; font-size: 1.6rem; color: var(--primary-dark); text-align: center;">发送消息</h3>
+                    
                     <form>
                         <div class="form-group">
                             <label class="form-label">姓名</label>
@@ -77,15 +94,17 @@
                             <select class="form-control">
                                 <option>基础课程 ($495)</option>
                                 <option>指导式导师制 ($2,495)</option>
-                                <option>高级网络 ($5,500)</option>
+                                <option>精英导师全程指导 ($5,500)</option>
                                 <option>其他/一般咨询</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-label">留言</label>
-                            <textarea rows="5" class="form-control" placeholder="告诉我们您的研究兴趣..."></textarea>
+                            <textarea rows="5" class="form-control" placeholder="告诉我们您的研究兴趣、学术背景以及我们如何帮助您..."></textarea>
                         </div>
-                        <button type="button" class="btn btn-primary" style="width: 100%;">发送消息</button>
+                        <button type="button" class="btn btn-accent" style="width: 100%; padding: 1rem; font-size: 1rem; font-weight: 600; margin-top: 1rem;">
+                            发送消息
+                        </button>
                     </form>
                 </div>
             </div>
@@ -96,7 +115,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 1rem;">知津<span>者</span></a>
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                        <img src="../circle_community_icon_32x32.svg" alt="Logo" style="height: 32px;">
+                        <span>知津<span style="color: white;">者</span></span>
+                    </a>
                     <p style="font-size: 0.9rem; line-height: 1.6;">
                         架起国际潜力与新西兰学术成功之间的桥梁
                     </p>
@@ -119,7 +141,7 @@
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 知津者有限公司. 保留所有权利
+                &copy; 2025 Research Pathway Limited (知津者). 保留所有权利
             </div>
         </div>
     </footer>

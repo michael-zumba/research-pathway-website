@@ -1,73 +1,98 @@
-# How to Host Your Website for Free with Your Custom Domain
+# GitHub Pages Hosting Guide for Research Pathway
 
-Since you have your own domain (**www.researchpathway.co.nz**), **Netlify** is the best "Free & Easy" choice. It handles the SSL certificate (HTTPS) for you automatically.
+This guide provides step-by-step instructions to host your website on GitHub Pages and connect it to your custom domain (`www.researchpathway.co.nz`).
 
----
-
-## Step 1: Upload Your Site to Netlify (Drag & Drop)
-
-1.  **Prepare Your Folder**:
-    *   Use the main `website` folder (the one containing `index.html` and `style.css`).
-    *   *Do NOT use the `google_sites_deploy` folder.*
-2.  **Upload**:
-    *   Go to [app.netlify.com/drop](https://app.netlify.com/drop).
-    *   Drag your `website` folder onto the browser window.
-    *   Wait a few seconds. Your site is now live on a temporary link (e.g., `fluffy-unicorn.netlify.app`).
+**Prerequisites:**
+- You have a GitHub account.
+- You have access to your Domain Registrar (where you bought the domain).
+- Your `website` folder is ready (I have already organized it for you).
 
 ---
 
-## Step 2: Connect Your Domain (www.researchpathway.co.nz)
+## Phase 1: Upload to GitHub
 
-1.  **In Netlify**:
-    *   Click on **"Domain Settings"** (or "Set up a custom domain").
-    *   Click **"Add custom domain"**.
-    *   Enter: `www.researchpathway.co.nz`
-    *   Click **Verify**.
-    *   Click **Yes, add domain**.
-
-2.  **Configure Your DNS (At your Domain Registrar)**:
-    *   Log in to the website where you bought your domain (e.g., GoDaddy, Crazy Domains, OnlyDomains, etc.).
-    *   Find the **DNS Settings** or **Zone Editor**.
-    *   You need to add/edit a **CNAME Record**:
-        *   **Type**: `CNAME`
-        *   **Host / Name**: `www`
-        *   **Value / Target**: `[your-netlify-site-name].netlify.app` (Copy this from the Netlify dashboard).
-        *   *TTL*: Leave as default (e.g., 3600 or 1 hour).
-    *   *(Optional but recommended)* Redirect the "naked" domain (`researchpathway.co.nz` without `www`):
-        *   Look for an **A Record** for `@` (or blank host).
-        *   Netlify will provide you with an IP address (usually `75.2.60.5`) to point this to. Check the instructions on the Netlify screen.
-
-3.  **Wait for HTTPS**:
-    *   Once the DNS is set, Netlify will automatically provision a free SSL certificate. This might take up to 24 hours (usually much faster).
+1.  **Log in to GitHub** and click the **+** icon (top right) -> **New repository**.
+2.  **Repository Name**: `research-pathway-website` (or similar).
+3.  **Visibility**: Choose **Public** (Required for free hosting).
+4.  **Initialize**: Do **not** check any boxes (Add README, etc.). Just click **Create repository**.
+5.  **Upload Files**:
+    *   On the next screen, look for the link **"uploading an existing file"**.
+    *   Drag and drop **ALL** files and folders from your local `website` folder into the browser.
+    *   **CRITICAL**: Ensure the file named `CNAME` is included in this upload.
+    *   Commit message: "Initial upload".
+    *   Click **Commit changes**.
 
 ---
 
-## Alternative: GitHub Pages (If you prefer GitHub)
+## Phase 2: Enable GitHub Pages
 
-1.  **Create Repository**: Create a public repo named `research-pathway-website`.
-2.  **Upload Files**: Upload your `website` folder contents to the `main` branch.
-3.  **Create CNAME File**:
-    *   Create a new file in the repository root named `CNAME` (all caps, no extension).
-    *   Inside the file, write only one line:
-        ```text
-        www.researchpathway.co.nz
-        ```
-4.  **Configure DNS**:
-    *   Login to your domain registrar.
-    *   Add a **CNAME Record**:
-        *   **Host**: `www`
-        *   **Value**: `[your-github-username].github.io`
-    *   Add **A Records** for the naked domain (`@`) pointing to GitHub's IPs:
-        *   `185.199.108.153`
-        *   `185.199.109.153`
-        *   `185.199.110.153`
-        *   `185.199.111.153`
+1.  Go to your repository **Settings** (tab at the top).
+2.  On the left sidebar, click **Pages**.
+3.  **Build and deployment**:
+    *   **Source**: Select `Deploy from a branch`.
+    *   **Branch**: Select `main` (or `master`) and folder `/ (root)`.
+    *   Click **Save**.
+4.  **Custom domain**:
+    *   In the "Custom domain" box, type: `www.researchpathway.co.nz`
+    *   Click **Save**.
+    *   *Note: If it says "CNAME already exists", that's good! It means it found the file I created for you.*
+5.  **Enforce HTTPS**: Check this box (it might take a few minutes to become clickable).
 
 ---
 
-## Which one should I choose?
+## Phase 3: Configure DNS (Connect Your Domain)
 
-*   **Choose Netlify** if you want the easiest setup. The "Drag & Drop" feature combined with their easy domain wizard is very user-friendly.
-*   **Choose GitHub Pages** if you want to keep your academic profile consistent on GitHub and are comfortable managing a repository.
+**Go to your Domain Registrar's website** (e.g., GoDaddy, Crazy Domains, OnlyDomains) and find the **DNS Management** or **Zone Editor**.
 
-Both are **100% free** for this type of website.
+You need to add/edit exactly **two** types of records.
+
+### 1. The "www" Record (CNAME)
+This connects `www.researchpathway.co.nz` to your GitHub site.
+
+| Type | Host / Name | Value / Target | TTL |
+| :--- | :--- | :--- | :--- |
+| **CNAME** | `www` | `[your-github-username].github.io` | 1 Hour / 3600 |
+
+*(Replace `[your-github-username]` with your actual GitHub username. e.g., if your user is `yuqian-zhang`, enter `yuqian-zhang.github.io`)*
+
+### 2. The Root Domain Record (A Record)
+This ensures that if someone types `researchpathway.co.nz` (without www), they still find your site.
+
+| Type | Host / Name | Value / Target |
+| :--- | :--- | :--- |
+| **A** | `@` (or leave blank) | `185.199.108.153` |
+| **A** | `@` (or leave blank) | `185.199.109.153` |
+| **A** | `@` (or leave blank) | `185.199.110.153` |
+| **A** | `@` (or leave blank) | `185.199.111.153` |
+
+*(You only strictly need one A record, but adding all 4 makes it more reliable).*
+
+---
+
+## Phase 4: Troubleshooting "Site Not Showing"
+
+If you have done all the above and the site is not loading or shows an error:
+
+### 1. The "404" Error
+*   **Cause**: GitHub doesn't know which file is your homepage.
+*   **Fix**: Ensure your main file is named exactly `index.html` (all lowercase). *I have checked your folder, and it is correct.*
+
+### 2. The "Privacy Error" or "Not Secure"
+*   **Cause**: The SSL (HTTPS) certificate is still being created.
+*   **Fix**: Wait. This process takes anywhere from **15 minutes to 24 hours**. Do not panic. It will resolve itself.
+
+### 3. The "Old Site" or "Blank Page" (Caching)
+*   **Cause**: Your browser remembers the old DNS settings.
+*   **Fix**:
+    *   Try opening the site in an **Incognito/Private** window.
+    *   Try accessing it from your **phone** (disconnect from WiFi, use mobile data).
+
+### 4. DNS Propagation Delay
+*   **Cause**: DNS changes travel across the internet slowly.
+*   **Fix**: This is the most common issue. It can take up to **48 hours**, though usually it's done in 1-2 hours. You can check your status at [whatsmydns.net](https://whatsmydns.net/#CNAME/www.researchpathway.co.nz).
+
+### 5. Check the "CNAME" File in GitHub
+*   Go to your GitHub repository "Code" tab.
+*   Click on the file named `CNAME`.
+*   Does it say **exactly** `www.researchpathway.co.nz`?
+*   If it has `http://` or `/` at the end, **edit it** to remove them. It must be just the domain name.
