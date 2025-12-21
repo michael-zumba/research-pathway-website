@@ -80,32 +80,72 @@
                     
                     <h3 style="margin-bottom: 2rem; font-size: 1.6rem; color: var(--primary-dark); text-align: center;">发送消息</h3>
                     
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
                             <label class="form-label">姓名</label>
-                            <input type="text" class="form-control" placeholder="您的姓名">
+                            <input type="text" name="name" class="form-control" placeholder="您的姓名" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label">邮箱地址</label>
-                            <input type="email" class="form-control" placeholder="you@example.com">
+                            <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label">感兴趣的项目</label>
-                            <select class="form-control">
-                                <option>基础课程 ($495)</option>
-                                <option>指导式导师制 ($2,495)</option>
-                                <option>精英导师全程指导 ($5,500)</option>
-                                <option>其他/一般咨询</option>
+                            <select name="program" class="form-control">
+                                <option value="Foundation Course">基础课程 ($495)</option>
+                                <option value="Guided Mentorship">指导式导师制 ($2,495)</option>
+                                <option value="Premium Network">精英导师全程指导 ($5,500)</option>
+                                <option value="Other">其他/一般咨询</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-label">留言</label>
-                            <textarea rows="5" class="form-control" placeholder="告诉我们您的研究兴趣、学术背景以及我们如何帮助您..."></textarea>
+                            <textarea name="message" rows="5" class="form-control" placeholder="告诉我们您的研究兴趣、学术背景以及我们如何帮助您..." required></textarea>
                         </div>
-                        <button type="button" class="btn btn-accent" style="width: 100%; padding: 1rem; font-size: 1rem; font-weight: 600; margin-top: 1rem;">
+                        
+                        <div id="formStatus" style="margin-bottom: 1rem; display: none;"></div>
+
+                        <button type="submit" class="btn btn-accent" id="submitBtn" style="width: 100%; padding: 1rem; font-size: 1rem; font-weight: 600; margin-top: 1rem;">
                             发送消息
                         </button>
                     </form>
+
+                    <script>
+                        const form = document.getElementById('contactForm');
+                        const statusDiv = document.getElementById('formStatus');
+                        const submitBtn = document.getElementById('submitBtn');
+                        // UPDATED: Using the latest provided Web App URL
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbznE--N1sNwP9gXvU2DuIGbnYtRkWgJISaxWjb8FVQs8tdiYD-esi9m-Uw4RMe36U9y/exec';
+
+                        form.addEventListener('submit', e => {
+                            e.preventDefault();
+                            
+                            // Loading state
+                            submitBtn.disabled = true;
+                            submitBtn.innerText = '发送中...';
+                            statusDiv.style.display = 'none';
+
+                            // Convert FormData to URLSearchParams for reliable parsing by Google Apps Script
+                            const data = new URLSearchParams(new FormData(form));
+
+                            fetch(scriptURL, { method: 'POST', body: data })
+                                .then(response => {
+                                    // Reset form and show success
+                                    form.reset();
+                                    statusDiv.innerHTML = '<div style="color: green; padding: 10px; background: #e8f5e9; border-radius: 4px; text-align: center;">消息发送成功！我们会尽快回复您。</div>';
+                                    statusDiv.style.display = 'block';
+                                    submitBtn.disabled = false;
+                                    submitBtn.innerText = '发送消息';
+                                })
+                                .catch(error => {
+                                    console.error('Error!', error.message);
+                                    statusDiv.innerHTML = '<div style="color: red; padding: 10px; background: #ffebee; border-radius: 4px; text-align: center;">发送失败，请稍后重试，或直接发送邮件至 info@researchpathway.co.nz</div>';
+                                    statusDiv.style.display = 'block';
+                                    submitBtn.disabled = false;
+                                    submitBtn.innerText = '发送消息';
+                                });
+                        });
+                    </script>
                 </div>
             </div>
         </div>
