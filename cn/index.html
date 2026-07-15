@@ -120,29 +120,40 @@
         <h2>发送咨询</h2>
         <p>请告诉我们您的需求，我们会尽快与您联系。</p>
 
-        <form class="enquiry-form" action="https://formsubmit.co/admin@researchpathway.co.nz" method="POST" style="margin-top:calc(var(--spacing)*8);">
-            <input type="hidden" name="_subject" value="新咨询 - 知津者 Research Pathway">
-            <input type="hidden" name="_captcha" value="false">
+        <div class="enquiry-card">
+            <form class="enquiry-form" action="https://formsubmit.co/admin@researchpathway.co.nz" method="POST">
+                <input type="hidden" name="_subject" value="新咨询 - 知津者 Research Pathway">
+                <input type="hidden" name="_captcha" value="false">
 
-            <label for="name">姓名</label>
-            <input type="text" id="name" name="name" required placeholder="您的全名">
+                <div class="field-row">
+                    <div>
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" required placeholder="您的全名">
+                    </div>
+                    <div>
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                </div>
 
-            <label for="email">邮箱</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                <div>
+                    <label for="topic">咨询类型</label>
+                    <select id="topic" name="topic" required>
+                        <option value="" disabled selected>请选择咨询类型</option>
+                        <option value="PhD Preparation Coaching">博士预备辅导</option>
+                        <option value="ProofPath Purchase or Usage">ProofPath 购买与使用</option>
+                        <option value="General Enquiry">其他咨询</option>
+                    </select>
+                </div>
 
-            <label for="topic">咨询类型</label>
-            <select id="topic" name="topic" required>
-                <option value="" disabled selected>请选择咨询类型</option>
-                <option value="PhD Preparation Coaching">博士预备辅导</option>
-                <option value="ProofPath Purchase or Usage">ProofPath 购买与使用</option>
-                <option value="General Enquiry">其他咨询</option>
-            </select>
+                <div>
+                    <label for="message">留言</label>
+                    <textarea id="message" name="message" rows="4" placeholder="请简要描述您的学术背景、目标或问题。"></textarea>
+                </div>
 
-            <label for="message">留言</label>
-            <textarea id="message" name="message" rows="4" placeholder="请简要描述您的学术背景、目标或问题。"></textarea>
-
-            <button type="submit" class="btn btn-primary" style="width:100%; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">发送</button>
-        </form>
+                <button type="submit" class="btn btn-primary" style="width:100%; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">发送</button>
+            </form>
+        </div>
 
         <p class="cta-note">您也可以直接发送邮件至 <a href="mailto:admin@researchpathway.co.nz" style="color:var(--brand-700);">admin@researchpathway.co.nz</a></p>
     </div>
@@ -163,10 +174,19 @@
                 <p>Research Pathway Limited</p>
             </div>
         </div>
-        <div style="text-align:center; padding:calc(var(--spacing)*4) 0; display:flex; gap:calc(var(--spacing)*5); justify-content:center; flex-wrap:wrap;">
-            <a href="https://www.linkedin.com/company/110454203" style="color:#c4bdb5; text-decoration:none; font-size:0.85rem; transition:color 0.15s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#c4bdb5'">LinkedIn</a>
-            <span style="color:#c4bdb5; font-size:0.85rem;">微信: Research_Pathway</span>
-            <span style="color:#c4bdb5; font-size:0.85rem;">小红书: ResearchPathway</span>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/110454203">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <span class="social-item">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.444-6.348zm5.106 6.358H8.797a.73.73 0 1 1 0-1.46h5a.73.73 0 1 1 0 1.46zm-5.046 1.945a.73.73 0 1 1 0-1.46h2.534a.73.73 0 1 1 0 1.46H8.751z"/></svg>
+                微信: Research_Pathway
+            </span>
+            <span class="social-item">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2"/></svg>
+                小红书: ResearchPathway
+            </span>
         </div>
         <div class="copyright">&copy; 2026 Research Pathway Limited (知津者). 保留所有权利。</div>
     </div>
