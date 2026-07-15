@@ -1,0 +1,4 @@
+.DS_Store
+google_sites_deploy/
+__pycache__/
+*.pyc

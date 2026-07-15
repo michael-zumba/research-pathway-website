@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .navy { fill: #0B1E3D; }
+      .grey { fill: #A0A5AB; }
+      .white { stroke: white; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Logo Symbol (Centered and Scaled) -->
+  <!-- Original 150x120. Target is ~32x26 to fit. Scale ~0.2 -->
+  <!-- Centering: (32 - 30) / 2 = 1 horizontal offset -->
+  <g transform="translate(1, 3) scale(0.2)">
+    <!-- Left Navy Part -->
+    <path d="M75 0 L0 120 L75 120 Z" class="navy" />
+    <!-- Right Grey Part -->
+    <path d="M75 0 L150 120 L75 120 Z" class="grey" />
+    <!-- The Path -->
+    <polyline points="75,120 55,80 95,40 75,0" class="white" stroke-width="15" />
+  </g>
+</svg>
