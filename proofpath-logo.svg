@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E304F"/>
+      <stop offset="100%" stop-color="#0D1A2D"/>
+    </linearGradient>
+    <linearGradient id="checkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EED78C"/>
+      <stop offset="35%" stop-color="#DAAA3D"/>
+      <stop offset="100%" stop-color="#B07C22"/>
+    </linearGradient>
+    <linearGradient id="edgeHighlight" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="checkShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+
+  <rect x="8" y="8" width="240" height="240" rx="54" ry="54" fill="url(#bgGrad)"/>
+  <rect x="8" y="8" width="240" height="240" rx="54" ry="54" fill="url(#edgeHighlight)"/>
+
+  <path d="M 68 130 L 106 162 C 146 126, 175 96, 200 68"
+        stroke="url(#checkGrad)" stroke-width="18"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"
+        filter="url(#checkShadow)"/>
+</svg>
