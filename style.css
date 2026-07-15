@@ -28,7 +28,7 @@
   --accent: #ded7cf;
   --input: #d7d1c9;
   --border: #cbc3ba;
-  --secondary: #1d1e20;
+  --secondary: #2e2822;
   --ring: var(--brand-500);
 
   --font-sans: Geist, ui-sans-serif, sans-serif, system-ui;
@@ -243,7 +243,7 @@ nav {
 }
 
 .hero-dark p {
-  color: #b4aba2;
+  color: #c4bdb5;
 }
 
 .hero-dark .btn-outline {
@@ -438,7 +438,7 @@ nav {
 footer {
   padding: calc(var(--spacing) * 12) 0 calc(var(--spacing) * 8);
   background: var(--secondary);
-  color: #b4aba2;
+  color: #c4bdb5;
 }
 
 .footer-grid {
@@ -476,7 +476,7 @@ footer {
 
 .footer-tagline {
   font-size: 0.85rem;
-  color: #9e948a;
+  color: #aca49c;
   margin: 0;
 }
 
