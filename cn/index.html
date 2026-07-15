@@ -19,7 +19,7 @@
                 <a href="index.html">首页</a>
                 <a href="../proofpath.html">ProofPath</a>
                 <a href="../index.html" style="font-size:0.85rem;">EN</a>
-                <a href="#strategy-call" class="btn btn-primary" style="padding:0 calc(var(--spacing)*4); min-height:38px;">预约战略咨询</a>
+                <a href="#contact" class="btn btn-primary" style="padding:0 calc(var(--spacing)*4); min-height:38px;">联系我们</a>
             </div>
         </nav>
     </div>
@@ -30,7 +30,7 @@
         <h1>培养博士阶段所需的研究技能。</h1>
         <p>为准备迈向下一阶段的学者提供辅导、资源和软件。</p>
         <div>
-            <a href="#strategy-call" class="btn btn-primary" style="margin-right:12px; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">预约免费15分钟战略咨询</a>
+            <a href="#contact" class="btn btn-primary" style="margin-right:12px; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">发送咨询</a>
             <a href="../proofpath.html" class="btn btn-outline" style="font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">试用ProofPath</a>
         </div>
     </div>
@@ -115,11 +115,36 @@
     </div>
 </section>
 
-<section class="cta" id="strategy-call">
+<section class="cta" id="contact">
     <div class="container">
-        <h2>谈谈您的研究目标。</h2>
-        <p>15分钟电话交流，了解您的学术背景和目标，看看我们能提供什么帮助。</p>
-        <a href="https://calendly.com/researchpathway" class="btn btn-primary" style="font-size:0.95rem; padding:0 calc(var(--spacing)*7); min-height:50px;">预约免费15分钟战略咨询</a>
+        <h2>发送咨询</h2>
+        <p>请告诉我们您的需求，我们会尽快与您联系。</p>
+
+        <form class="enquiry-form" action="https://formsubmit.co/admin@researchpathway.co.nz" method="POST" style="margin-top:calc(var(--spacing)*8);">
+            <input type="hidden" name="_subject" value="新咨询 - 知津者 Research Pathway">
+            <input type="hidden" name="_captcha" value="false">
+
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" required placeholder="您的全名">
+
+            <label for="email">邮箱</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+
+            <label for="topic">咨询类型</label>
+            <select id="topic" name="topic" required>
+                <option value="" disabled selected>请选择咨询类型</option>
+                <option value="PhD Preparation Coaching">博士预备辅导</option>
+                <option value="ProofPath Purchase or Usage">ProofPath 购买与使用</option>
+                <option value="General Enquiry">其他咨询</option>
+            </select>
+
+            <label for="message">留言</label>
+            <textarea id="message" name="message" rows="4" placeholder="请简要描述您的学术背景、目标或问题。"></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">发送</button>
+        </form>
+
+        <p class="cta-note">您也可以直接发送邮件至 <a href="mailto:admin@researchpathway.co.nz" style="color:var(--brand-700);">admin@researchpathway.co.nz</a></p>
     </div>
 </section>
 
@@ -134,9 +159,14 @@
                 <p class="footer-tagline">研究技能与学术软件。新西兰基督城。</p>
             </div>
             <div class="footer-contact">
-                <p><a href="mailto:info@researchpathway.co.nz">info@researchpathway.co.nz</a></p>
+                <p><a href="mailto:admin@researchpathway.co.nz">admin@researchpathway.co.nz</a></p>
                 <p>Research Pathway Limited</p>
             </div>
+        </div>
+        <div style="text-align:center; padding:calc(var(--spacing)*4) 0; display:flex; gap:calc(var(--spacing)*5); justify-content:center; flex-wrap:wrap;">
+            <a href="https://www.linkedin.com/company/110454203" style="color:#c4bdb5; text-decoration:none; font-size:0.85rem; transition:color 0.15s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#c4bdb5'">LinkedIn</a>
+            <span style="color:#c4bdb5; font-size:0.85rem;">微信: Research_Pathway</span>
+            <span style="color:#c4bdb5; font-size:0.85rem;">小红书: ResearchPathway</span>
         </div>
         <div class="copyright">&copy; 2026 Research Pathway Limited (知津者). 保留所有权利。</div>
     </div>

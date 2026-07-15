@@ -19,7 +19,7 @@
                 <a href="index.html">Home</a>
                 <a href="proofpath.html">ProofPath</a>
                 <a href="cn/index.html" style="font-size:0.85rem;">中文</a>
-                <a href="#strategy-call" class="btn btn-primary" style="padding:0 calc(var(--spacing)*4); min-height:38px;">Book a Strategy Call</a>
+                <a href="#contact" class="btn btn-primary" style="padding:0 calc(var(--spacing)*4); min-height:38px;">Get in Touch</a>
             </div>
         </nav>
     </div>
@@ -30,7 +30,7 @@
         <h1>Build the research skills that doctoral programmes expect.</h1>
         <p>Coaching, resources, and software for academics preparing for the next stage of their career.</p>
         <div>
-            <a href="#strategy-call" class="btn btn-primary" style="margin-right:12px; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">Book a Free Strategy Call</a>
+            <a href="#contact" class="btn btn-primary" style="margin-right:12px; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">Make an Enquiry</a>
             <a href="proofpath.html" class="btn btn-outline" style="font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">Try ProofPath</a>
         </div>
     </div>
@@ -115,11 +115,36 @@
     </div>
 </section>
 
-<section class="cta" id="strategy-call">
+<section class="cta" id="contact">
     <div class="container">
-        <h2>Let's discuss your research goals.</h2>
-        <p>A 15-minute call to talk about your background, your aspirations, and how we can help.</p>
-        <a href="https://calendly.com/researchpathway" class="btn btn-primary" style="font-size:0.95rem; padding:0 calc(var(--spacing)*7); min-height:50px;">Book a Free 15-Minute Strategy Call</a>
+        <h2>Make an Enquiry</h2>
+        <p>Tell us about your interest and we will get in touch.</p>
+
+        <form class="enquiry-form" action="https://formsubmit.co/admin@researchpathway.co.nz" method="POST" style="margin-top:calc(var(--spacing)*8);">
+            <input type="hidden" name="_subject" value="New Enquiry - Research Pathway">
+            <input type="hidden" name="_captcha" value="false">
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+
+            <label for="topic">Enquiry Type</label>
+            <select id="topic" name="topic" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="PhD Preparation Coaching">PhD Preparation Coaching</option>
+                <option value="ProofPath Purchase or Usage">ProofPath Purchase or Usage</option>
+                <option value="General Enquiry">General Enquiry</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Briefly describe your background, goals, or questions."></textarea>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">Send Enquiry</button>
+        </form>
+
+        <p class="cta-note">Or email us directly at <a href="mailto:admin@researchpathway.co.nz" style="color:var(--brand-700);">admin@researchpathway.co.nz</a></p>
     </div>
 </section>
 
@@ -134,9 +159,14 @@
                 <p class="footer-tagline">Research Skills & Academic Software. Christchurch, New Zealand.</p>
             </div>
             <div class="footer-contact">
-                <p><a href="mailto:info@researchpathway.co.nz">info@researchpathway.co.nz</a></p>
+                <p><a href="mailto:admin@researchpathway.co.nz">admin@researchpathway.co.nz</a></p>
                 <p>Research Pathway Limited</p>
             </div>
+        </div>
+        <div style="text-align:center; padding:calc(var(--spacing)*4) 0; display:flex; gap:calc(var(--spacing)*5); justify-content:center; flex-wrap:wrap;">
+            <a href="https://www.linkedin.com/company/110454203" style="color:#c4bdb5; text-decoration:none; font-size:0.85rem; transition:color 0.15s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#c4bdb5'">LinkedIn</a>
+            <span style="color:#c4bdb5; font-size:0.85rem;">WeChat: Research_Pathway</span>
+            <span style="color:#c4bdb5; font-size:0.85rem;">小红书: ResearchPathway</span>
         </div>
         <div class="copyright">&copy; 2026 Research Pathway Limited. All rights reserved.</div>
     </div>

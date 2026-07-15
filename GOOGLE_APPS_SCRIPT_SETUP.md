@@ -13,7 +13,7 @@ Because you use **Google Workspace**, the best "native" solution is to use **Goo
 
 ## Step 1: Create the Google Script
 
-1.  Log in to your Google account (`info@researchpathway.co.nz`).
+1.  Log in to your Google account (`admin@researchpathway.co.nz`).
 2.  Go to [script.google.com](https://script.google.com/).
 3.  Click **+ New Project**.
 4.  Rename the project (click "Untitled project" at top left) to `Website Contact Form`.
@@ -21,7 +21,7 @@ Because you use **Google Workspace**, the best "native" solution is to use **Goo
 
 ```javascript
 // Change this to the email address where you want to receive messages
-var TO_ADDRESS = "info@researchpathway.co.nz";
+var TO_ADDRESS = "admin@researchpathway.co.nz";
 
 function doPost(e) {
   try {
@@ -96,7 +96,7 @@ Because the script sends emails **from** your account **to** your account (which
 
 **To fix this permanently:**
 
-1.  Open Gmail (`info@researchpathway.co.nz`).
+1.  Open Gmail (`admin@researchpathway.co.nz`).
 2.  Click the **Settings gear** -> **See all settings**.
 3.  Go to the **Filters and Blocked Addresses** tab.
 4.  Click **Create a new filter**.
