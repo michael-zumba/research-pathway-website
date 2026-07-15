@@ -118,27 +118,24 @@
 <section class="cta" id="contact">
     <div class="container">
         <h2>Make an Enquiry</h2>
-        <p>Tell us about your interest and we will get in touch.</p>
+        <p>Complete the form below to send us an email.</p>
 
         <div class="enquiry-card">
-            <form class="enquiry-form" action="https://formsubmit.co/admin@researchpathway.co.nz" method="POST">
-                <input type="hidden" name="_subject" value="New Enquiry - Research Pathway">
-                <input type="hidden" name="_captcha" value="false">
-
+            <form class="enquiry-form" onsubmit="return sendEnquiry(event)">
                 <div class="field-row">
                     <div>
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                        <input type="text" id="name" required placeholder="Your full name">
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        <input type="email" id="email" required placeholder="your@email.com">
                     </div>
                 </div>
 
                 <div>
                     <label for="topic">Enquiry Type</label>
-                    <select id="topic" name="topic" required>
+                    <select id="topic" required>
                         <option value="" disabled selected>Select a topic</option>
                         <option value="PhD Preparation Coaching">PhD Preparation Coaching</option>
                         <option value="ProofPath Purchase or Usage">ProofPath Purchase or Usage</option>
@@ -148,16 +145,34 @@
 
                 <div>
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Briefly describe your background, goals, or questions."></textarea>
+                    <textarea id="message" rows="4" placeholder="Briefly describe your background, goals, or questions."></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width:100%; font-size:0.95rem; padding:0 calc(var(--spacing)*6); min-height:48px;">Send Enquiry</button>
             </form>
         </div>
 
-        <p class="cta-note">Or email us directly at <a href="mailto:admin@researchpathway.co.nz" style="color:var(--brand-700);">admin@researchpathway.co.nz</a></p>
+        <p class="cta-note">You can also email us directly at <a href="mailto:admin@researchpathway.co.nz" style="color:var(--brand-700);">admin@researchpathway.co.nz</a></p>
     </div>
 </section>
+
+<script>
+function sendEnquiry(event) {
+    event.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var topic = document.getElementById('topic').value;
+    var message = document.getElementById('message').value.trim();
+    var body = 'Name: ' + name + '%0D%0A' +
+               'Email: ' + email + '%0D%0A' +
+               'Topic: ' + topic + '%0D%0A%0D%0A' +
+               (message || '[No message provided]');
+    window.location.href = 'mailto:admin@researchpathway.co.nz'
+        + '?subject=' + encodeURIComponent('Enquiry: ' + topic)
+        + '&body=' + body;
+    return false;
+}
+</script>
 
 <footer>
     <div class="container">
